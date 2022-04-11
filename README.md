@@ -1,2 +1,2 @@
 # Innovation-Programming-language
-Just innovation lol
+The new innovation programming language
