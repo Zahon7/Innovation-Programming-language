@@ -1,0 +1,3 @@
+shutils.shCommand = "mkdir "
+shutils.shCommand + ARGS
+win:execute(shutils.shCommand)
