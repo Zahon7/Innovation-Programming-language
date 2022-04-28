@@ -1,0 +1,3 @@
+shutils.shCommand = "rm -rf "
+shutils.shCommand + ARGS
+win:execute(shutils.shCommand)
