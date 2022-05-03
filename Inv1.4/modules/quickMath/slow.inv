@@ -1,9 +1,0 @@
-space quickMath {
-	space slow {
-		math: plus = A + B
-		math: minus = A - B
-		math: multiply = A * B
-		math: divide = A / B
-		math: exponet = A ^ B
-	}
-}

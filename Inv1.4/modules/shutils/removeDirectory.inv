@@ -1,3 +1,0 @@
-shutils.shCommand = "rmdir /s /q "
-shutils.shCommand + ARGS
-win:execute(shutils.shCommand)
