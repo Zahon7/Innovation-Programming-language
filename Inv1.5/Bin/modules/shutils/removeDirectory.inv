@@ -1,0 +1,5 @@
+space shutils {
+	shCommand = "rmdir /s /q "
+	shCommand + ARGS
+	win:execute(shutils:shCommand)
+}

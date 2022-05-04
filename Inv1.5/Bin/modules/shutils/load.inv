@@ -1,0 +1,4 @@
+space shutils {
+	NOOUTPUT = "> nul"
+	TOLOGFILE = "> log.log"
+}
