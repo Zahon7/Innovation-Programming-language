@@ -1,0 +1,12 @@
+space shutils:global {
+	// split(text: what, text: by, num: index, *output)
+	getArgs(1, *dest)
+	getArgs(2, *args)
+
+	shCommand = "ping "
+	shCommand + dest
+	shCommand + " "
+	shCommand + args
+
+	win:execute(shutils:global:shCommand)
+}
