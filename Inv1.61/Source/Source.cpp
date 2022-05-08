@@ -254,7 +254,7 @@ bool replaceString(std::string& str, const std::string& from, const std::string&
 std::string replaceVariables(std::string str) {
     std::string expr = str;
     for(int i = 0; i < pointer; i++) {
-        replaceString(expr, variables_keys[i], variables_vals[i]);
+        replaceString(expr, variables_keys[i], getValue(variables_keys[i]));
     }
     return expr;
 }
@@ -859,10 +859,7 @@ int main(int argc, char* argv[]) {
             }
 
             std::string toEval = getValue(split(myText, "(")[0]);
-
-            for(int i = 0; i < count; i++) {
-                replaceString(toEval, listOf[i], getValue(listOf[i]));
-            }
+            replaceVariables(toEval);
 
             insert("returned", "num: " + evalExpr(toEval));
 
