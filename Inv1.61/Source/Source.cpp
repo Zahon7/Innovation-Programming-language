@@ -16,7 +16,6 @@ using namespace std;
 const std::string WHITESPACE = " \n\r\t\f\v";
 
 std::string evalExpr(std::string expr) {
-    std::cout << expr << endl;
     system(("set /a expr = " + expr + " > invexpr").c_str());
     std::string out = "";
     std::string StringOut = "";
@@ -788,8 +787,10 @@ int main(int argc, char* argv[]) {
             if(not(value[0] == '\"') && (myText.find(" + ") != std::string::npos | myText.find(" / ") != std::string::npos | myText.find(" x ") != std::string::npos | myText.find(" - ") != std::string::npos)) {
                 std::string expr = value;
                 replaceString(expr, " x ", " * ");
-                expr = replaceVariables(expr);
-                expr = expr.substr(5, expr.length());
+                for(int i = 0; i < 5; i++) {
+                    expr = replaceVariables(expr);
+                }
+                std::cout << expr << endl;
                 insert(varAdder + split(myText, " = ")[0], "num: " + evalExpr(expr));
                 continue;
             }
@@ -859,7 +860,9 @@ int main(int argc, char* argv[]) {
             }
 
             std::string toEval = getValue(split(myText, "(")[0]);
-            replaceVariables(toEval);
+            for(int i = 0; i < 5; i++) {
+                toEval = replaceVariables(toEval);
+            }
 
             insert("returned", "num: " + evalExpr(toEval));
 
