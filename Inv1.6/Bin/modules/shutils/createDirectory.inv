@@ -1,0 +1,5 @@
+space shutils {
+	shCommand = "mkdir "
+	shCommand + ARGS
+	win:execute(shutils:shCommand)
+}
