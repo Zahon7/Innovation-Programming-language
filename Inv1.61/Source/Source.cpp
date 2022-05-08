@@ -16,6 +16,7 @@ using namespace std;
 const std::string WHITESPACE = " \n\r\t\f\v";
 
 std::string evalExpr(std::string expr) {
+    std::cout << expr << endl;
     system(("set /a expr = " + expr + " > invexpr").c_str());
     std::string out = "";
     std::string StringOut = "";
